@@ -1,13 +1,13 @@
 import { delimeterMsg, log } from "./utils";
 
-function firstTopic() {
-
+function creatingNewObservables() {
+  
 }
 
 export default function creatingObservables() {
   delimeterMsg('GETTING STARTED');
 
-  log('first asdad');
-  firstTopic();
+  log('Creating new observables');
+  creatingNewObservables();
   
 }
