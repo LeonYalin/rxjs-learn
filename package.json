@@ -1,33 +1,9 @@
 {
-  "_from": "@nobrainr/typescript_universal-webpack-karma_jasmine@^1.0.0",
-  "_id": "@nobrainr/typescript_universal-webpack-karma_jasmine@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-yt9IFFFsnYn0KwZxqKehMPyN/RpyF8tP8U7uJqj0yFrqox5Pxedv9h+aTWNzIGVGNbaihC6STzQokEzQQeNIfQ==",
-  "_location": "/@nobrainr/typescript_universal-webpack-karma_jasmine",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "@nobrainr/typescript_universal-webpack-karma_jasmine@^1.0.0",
-    "name": "@nobrainr/typescript_universal-webpack-karma_jasmine",
-    "escapedName": "@nobrainr%2ftypescript_universal-webpack-karma_jasmine",
-    "scope": "@nobrainr",
-    "rawSpec": "^1.0.0",
-    "saveSpec": null,
-    "fetchSpec": "^1.0.0"
+  "author": "Leon Yalin",
+  "description": "This project helps in learning RxJS",
+  "dependencies": {
+    "rxjs": "^6.5.2"
   },
-  "_requiredBy": [
-    "#DEV:/",
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/@nobrainr/typescript_universal-webpack-karma_jasmine/-/typescript_universal-webpack-karma_jasmine-1.0.0.tgz",
-  "_shasum": "1c7e50d285c3427fd7ddb716147fc558b3d55754",
-  "_spec": "@nobrainr/typescript_universal-webpack-karma_jasmine@^1.0.0",
-  "_where": "C:\\Users\\Home\\AppData\\Roaming\\npm-cache\\_npx\\7500\\node_modules\\create-ts-lib",
-  "author": "",
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "",
   "devDependencies": {
     "@types/jasmine": "^2.5.53",
     "awesome-typescript-loader": "^5.2.0",

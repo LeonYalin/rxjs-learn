@@ -4,6 +4,6 @@ export default class Person {
   }
 
   sayHello(): string {
-    return `Hello ${this.firstName} ${this.lastName}`;
+    return `Hello, I am ${this.firstName} ${this.lastName}!`;
   }
 }

@@ -6,18 +6,18 @@ function delimeterMsg(str: string) {
 
 function log(...args: any[]) {
   console.log(...['\n', ...args.map(arg => arg + '\n\n')]);
-  logHTML(args);
+  logToHTML(args);
 }
 
 function delimeterMsgHTML(msg: string) {
-  logToHTML(msg, 'delimeter-msg');
+  appendMsgToHTML(msg, 'delimeter-msg');
 }
 
-function logHTML(...args: any[]) {
-  logToHTML(args.join('\n'), 'msg');
+function logToHTML(...args: any[]) {
+  appendMsgToHTML(args.join('\n'), 'msg');
 }
 
-function logToHTML(msg: string, klass: string) {
+function appendMsgToHTML(msg: string, klass: string) {
   const div: HTMLElement = document.createElement('div');
   div.classList.add(klass);
   div.innerText = msg;
@@ -25,4 +25,4 @@ function logToHTML(msg: string, klass: string) {
   document.getElementById('content').appendChild(div); 
 }
 
-export { log, delimeterMsg };
+export { log, logToHTML, delimeterMsg };
