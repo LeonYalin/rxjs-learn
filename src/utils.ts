@@ -9,6 +9,11 @@ function log(...args: any[]) {
   logToHTML(args);
 }
 
+function logF(f: Function, ...args: any) {
+  log(splitToWords(f.name));
+  f(args);
+}
+
 function delimeterMsgHTML(msg: string) {
   appendMsgToHTML(msg, 'delimeter-msg');
 }
@@ -22,7 +27,19 @@ function appendMsgToHTML(msg: string, klass: string) {
   div.classList.add(klass);
   div.innerText = msg;
 
-  document.getElementById('content').appendChild(div); 
+  document.getElementById('content').appendChild(div);
 }
 
-export { log, logToHTML, delimeterMsg };
+function splitToWords(str: string): string {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .split(' ')
+    .map((str, i) => i == 0 ? capitalize(str) : str.toLowerCase())
+    .join(' ');
+}
+
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export { log, logF, logToHTML, delimeterMsg };

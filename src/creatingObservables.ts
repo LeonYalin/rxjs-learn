@@ -1,4 +1,4 @@
-import { delimeterMsg, log, logToHTML } from "./utils";
+import { delimeterMsg, log, logToHTML, logF } from "./utils";
 import { Observable, Observer, of, from, concat, fromEvent } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { persons, companies } from "./fixtures";
@@ -73,25 +73,11 @@ function creatingObservablesFromAJAXCallUsingAJAXFunction() {
 
 export default function creatingObservables() {
   delimeterMsg('CREATING NEW OBSERVABLES');
-
-  log('Creating observables using constructor');
-  creatingNewObservablesUsingConstructor();
-
-  log('Creating observables from static function');
-  creatingObservablesUsingStaticCall();
-
-  log('Creating observables using of() function');
-  creatingObservablesUsingOfFunction();
-
-  log('Creating observables using from() function');
-  creatingObservablesUsingFromFunction();
-
-  log('Combining observables using concat() function');
-  combiningObservablesUsingConcatFunction();
-
-  log('Creating observables using fromEvent() function');
-  creatingObservablesFromEventsUsingFromEventFunction();
-
-  log('Creating observables from AJAX call using ajax() function');
-  creatingObservablesFromAJAXCallUsingAJAXFunction();
+  logF(creatingNewObservablesUsingConstructor);
+  logF(creatingObservablesUsingStaticCall);
+  logF(creatingObservablesUsingOfFunction);
+  logF(creatingObservablesUsingFromFunction);
+  logF(combiningObservablesUsingConcatFunction);
+  logF(creatingObservablesFromEventsUsingFromEventFunction);
+  logF(creatingObservablesFromAJAXCallUsingAJAXFunction);
 }
