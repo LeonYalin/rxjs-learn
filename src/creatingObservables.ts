@@ -64,7 +64,7 @@ function creatingObservablesFromEventsUsingFromEventFunction() {
 function creatingObservablesFromAJAXCallUsingAJAXFunction() {
   const source$ = fromEvent(document.getElementById('fromEvent'), 'click');
   source$.subscribe((data: MouseEvent) => {
-    ajax('https://jsonplaceholder.typicode.com/posts')
+    ajax('https://jsonplaceholder.typicode.com/posts/1')
       .subscribe(data => {
         console.log(data.response);
       });
