@@ -1,6 +1,6 @@
 import { delimeterMsg, log, logF } from "./utils";
 import { persons } from "./fixtures";
-import { from, Observer, Observable, Subscriber } from "rxjs";
+import { from, Observer, Observable, Subscriber, interval } from "rxjs";
 import Person from "./person";
 
 function creatingObservers() {
@@ -25,7 +25,28 @@ function creatingMultipleObservers() {
 }
 
 function usingIntervalAndUnsubscribingFromObservable() {
-  // todo:
+  let count = 0;
+  const timer$ = interval(10);
+  const timerSubscription = timer$.subscribe(
+    (val) => {
+      if (count === 5) {
+        timerSubscription.unsubscribe();
+        return;
+      }
+      console.log('interval observable', val);
+      count++;
+    },
+    null,
+    () => console.log('interval observable complete'),
+  );
+}
+
+function unsubscribingFromMultipleSubscriptions() {
+  const persons$ = from(persons);
+  const pSub1 = persons$.subscribe(p => console.log(p.sayHello()));
+  const pSub2 = persons$.subscribe(p => console.log(p));
+  pSub1.add(pSub2);
+  pSub1.unsubscribe() // will also unsubscribe from pSub2  
 }
 
 export default function subscribingToObservables() {
@@ -33,4 +54,5 @@ export default function subscribingToObservables() {
   logF(creatingObservers);
   logF(creatingMultipleObservers);
   logF(usingIntervalAndUnsubscribingFromObservable);
+  logF(unsubscribingFromMultipleSubscriptions);
 }
