@@ -61,7 +61,7 @@ function creatingObservablesFromEventsUsingFromEventFunction() {
   });
 }
 
-function creatingObservablesFromAJAXCallUsingAJAXFunction() {
+function creatingObservablesFromAjaxCallUsingAjaxFunction() {
   const source$ = fromEvent(document.getElementById('fromEvent'), 'click');
   source$.subscribe((data: MouseEvent) => {
     ajax('https://jsonplaceholder.typicode.com/posts/1')
@@ -79,5 +79,5 @@ export default function creatingObservables() {
   logF(creatingObservablesUsingFromFunction);
   logF(combiningObservablesUsingConcatFunction);
   logF(creatingObservablesFromEventsUsingFromEventFunction);
-  logF(creatingObservablesFromAJAXCallUsingAJAXFunction);
+  logF(creatingObservablesFromAjaxCallUsingAjaxFunction);
 }

@@ -6,11 +6,10 @@ function delimeterMsg(str: string) {
 
 function log(...args: any[]) {
   console.log(...['\n', ...args.map(arg => arg + '\n\n')]);
-  logToHTML(args);
 }
 
 function logF(f: Function, ...args: any) {
-  log(splitToWords(f.name));
+  logToHTML(splitToWords(f.name));
   f(args);
 }
 
