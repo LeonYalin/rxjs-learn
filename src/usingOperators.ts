@@ -1,11 +1,14 @@
 import { ajax } from 'rxjs/ajax';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, mergeMap, take, tap } from 'rxjs/operators';
 import { delimeterMsg, logF } from "./utils";
+import { from } from 'rxjs';
 
 function creatingOperators() {
   ajax('https://jsonplaceholder.typicode.com/posts/')
   .pipe(
-    map(ajaxData => ajaxData.response)
+    mergeMap(ajaxData => from(ajaxData.response).pipe(take(5))),
+    filter(item => item['id'] === 1),
+    tap(item => console.log('tap', item)),
   )
   .subscribe(data => console.log('data after pipe', data))
 }

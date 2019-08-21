@@ -9,7 +9,9 @@ function log(...args: any[]) {
 }
 
 function logF(f: Function, ...args: any) {
-  logToHTML(splitToWords(f.name));
+  const name = splitToWords(f.name);
+  log(name);
+  logToHTML(name);
   f(args);
 }
 
