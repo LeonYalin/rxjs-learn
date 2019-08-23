@@ -1,7 +1,6 @@
-import { map, mergeMap, filter, tap, take } from 'rxjs/operators';
+import { map, filter, tap } from 'rxjs/operators';
 import { delimeterMsg, logF } from "./utils";
 import { of, from, Subscriber, Observable } from "rxjs";
-import { ajax } from 'rxjs/ajax';
 import Person from './person';
 import { persons } from './fixtures';
 
