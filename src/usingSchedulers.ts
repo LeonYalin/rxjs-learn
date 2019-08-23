@@ -1,7 +1,6 @@
 import { delimeterMsg, logF } from "./utils";
 import { of, queueScheduler, asapScheduler, asyncScheduler, Observable, from } from "rxjs";
 import { merge, tap, observeOn } from "rxjs/operators";
-import { persons } from "./fixtures";
 
 function usingDifferentSchedulers() {
   console.log('start script');

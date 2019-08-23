@@ -4,6 +4,7 @@ import usingOperators from "./usingOperators";
 import createCustomOperators from "./creatingCustomOperators";
 import usingSubjectsAndMulticastedObservables from "./usingSubjectsAndMulticastedObservables";
 import usingSchedulers from "./usingSchedulers";
+import testingRxJSCode from "./testingRxJsCode";
 
 (function main() {
   creatingObservables();
@@ -12,4 +13,5 @@ import usingSchedulers from "./usingSchedulers";
   createCustomOperators();
   usingSubjectsAndMulticastedObservables();
   usingSchedulers();
+  testingRxJSCode();
 }());
