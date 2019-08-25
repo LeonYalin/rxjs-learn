@@ -38,7 +38,7 @@
   },
   "license": "ISC",
   "main": "src/index.ts",
-  "name": "react-redux2-learn",
+  "name": "rxjs-learn",
   "scripts": {
     "build": "npm run build:prod",
     "build:dev": "webpack --mode development --config ./webpack.config.js --progress --color --display-error-details",
